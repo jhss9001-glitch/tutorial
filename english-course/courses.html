@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강의 목록 | Speak Up English</title>
+  <meta name="description" content="입문·중급·고급 레벨별 SpeakUp 영어 스피킹 강의 목록.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 상단 내비게이션 -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Speak<span>Up</span></a>
+      <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+      <nav class="nav-menu">
+      <a href="courses.html" class="active" aria-current="page">강의</a>
+      <a href="instructor.html">강사 소개</a>
+      <a href="reviews.html">수강 후기</a>
+      <a href="faq.html">FAQ</a>
+        <a href="signup.html" class="btn btn-small">무료 체험</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 강의 목록 -->
+    <section id="courses" class="section">
+      <div class="container">
+        <h1 class="section-title">나에게 맞는 강의 찾기</h1>
+        <p class="section-sub">레벨을 선택하면 해당 강의만 볼 수 있어요.</p>
+
+        <div class="filters" role="tablist">
+          <button class="filter active" data-level="all">전체</button>
+          <button class="filter" data-level="beginner">입문</button>
+          <button class="filter" data-level="intermediate">중급</button>
+          <button class="filter" data-level="advanced">고급</button>
+        </div>
+
+        <div class="course-grid">
+          <article class="course-card" data-level="beginner">
+            <span class="badge beginner">입문</span>
+            <h3>왕초보 생활 영어</h3>
+            <p>인사, 주문, 길 묻기 등 일상에서 바로 쓰는 필수 표현 200개.</p>
+            <ul class="meta"><li>8주</li><li>32강</li></ul>
+            <p class="price">월 29,000원</p>
+          </article>
+          <article class="course-card" data-level="beginner">
+            <span class="badge beginner">입문</span>
+            <h3>발음 교정 클리닉</h3>
+            <p>원어민처럼 들리는 연음과 강세, 억양을 집중적으로 훈련합니다.</p>
+            <ul class="meta"><li>6주</li><li>24강</li></ul>
+            <p class="price">월 25,000원</p>
+          </article>
+          <article class="course-card" data-level="intermediate">
+            <span class="badge intermediate">중급</span>
+            <h3>여행 & 해외 생활 회화</h3>
+            <p>공항, 호텔, 병원 등 실제 상황을 롤플레이로 연습합니다.</p>
+            <ul class="meta"><li>10주</li><li>40강</li></ul>
+            <p class="price">월 35,000원</p>
+          </article>
+          <article class="course-card" data-level="intermediate">
+            <span class="badge intermediate">중급</span>
+            <h3>미드로 배우는 리스닝</h3>
+            <p>인기 드라마 장면으로 자연스러운 구어체와 듣기 실력을 키웁니다.</p>
+            <ul class="meta"><li>12주</li><li>48강</li></ul>
+            <p class="price">월 35,000원</p>
+          </article>
+          <article class="course-card" data-level="advanced">
+            <span class="badge advanced">고급</span>
+            <h3>비즈니스 영어 프레젠테이션</h3>
+            <p>회의, 협상, 발표에서 논리적으로 말하는 구조와 표현을 익힙니다.</p>
+            <ul class="meta"><li>12주</li><li>48강</li></ul>
+            <p class="price">월 45,000원</p>
+          </article>
+          <article class="course-card" data-level="advanced">
+            <span class="badge advanced">고급</span>
+            <h3>영어 토론 & 시사</h3>
+            <p>최신 뉴스를 주제로 의견을 말하고 반박하는 토론 훈련.</p>
+            <ul class="meta"><li>8주</li><li>32강</li></ul>
+            <p class="price">월 45,000원</p>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 SpeakUp English. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="맨 위로">↑</button>
+
+  <script src="js/common.js"></script>
+  <script src="js/courses.js"></script>
+</body>
+</html>

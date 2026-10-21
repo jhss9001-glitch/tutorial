@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>무료 체험 신청 | Speak Up English</title>
+  <meta name="description" content="SpeakUp English 7일 무료 체험을 신청하세요.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- 상단 내비게이션 -->
+  <header class="header">
+    <div class="container nav">
+      <a href="index.html" class="logo">Speak<span>Up</span></a>
+      <button class="nav-toggle" aria-label="메뉴 열기" aria-expanded="false">☰</button>
+      <nav class="nav-menu">
+      <a href="courses.html">강의</a>
+      <a href="instructor.html">강사 소개</a>
+      <a href="reviews.html">수강 후기</a>
+      <a href="faq.html">FAQ</a>
+        <a href="signup.html" class="btn btn-small" aria-current="page">무료 체험</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- 무료 체험 신청 -->
+    <section id="signup" class="section signup">
+      <div class="container narrow">
+        <h1 class="section-title">7일 무료 체험 신청</h1>
+        <p class="section-sub">신청하시면 레벨 테스트 링크를 이메일로 보내드려요.</p>
+        <form class="signup-form" novalidate>
+          <div class="field">
+            <label for="name">이름</label>
+            <input id="name" name="name" type="text" placeholder="홍길동">
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="email">이메일</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com">
+            <small class="error"></small>
+          </div>
+          <div class="field">
+            <label for="level">관심 레벨</label>
+            <select id="level" name="level">
+              <option value="">선택해 주세요</option>
+              <option value="beginner">입문</option>
+              <option value="intermediate">중급</option>
+              <option value="advanced">고급</option>
+            </select>
+            <small class="error"></small>
+          </div>
+          <button type="submit" class="btn btn-full">신청하기</button>
+          <p class="form-success" hidden></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>© 2026 SpeakUp English. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <button class="to-top" aria-label="맨 위로">↑</button>
+
+  <script src="js/common.js"></script>
+  <script src="js/signup.js"></script>
+</body>
+</html>

@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>다국어 복약지도 가이드</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="app-header">
+    <div class="brand">
+      <span class="logo" aria-hidden="true">Rx</span>
+      <div>
+        <h1>다국어 복약지도 가이드</h1>
+        <p>English · 中文 · 日本語</p>
+      </div>
+    </div>
+    <label class="pharmacy-field">
+      약국명
+      <input id="pharmacyName" type="text" placeholder="예: 행복약국 (선택)">
+    </label>
+  </header>
+
+  <main class="layout">
+    <!-- ============ 입력 영역 ============ -->
+    <section class="panel input-panel" aria-label="복약 정보 입력">
+      <div class="step">
+        <h2><span class="num">1</span>약 선택</h2>
+        <div class="search-wrap">
+          <input id="drugSearch" type="search" autocomplete="off"
+                 placeholder="제품명 또는 성분명 검색 (예: 타이레놀, ibuprofen)"
+                 aria-controls="drugResults" aria-autocomplete="list">
+          <ul id="drugResults" class="results" role="listbox" hidden></ul>
+        </div>
+
+        <div id="selectedDrug" class="selected-drug" hidden></div>
+
+        <button type="button" id="customToggle" class="link-btn">+ 목록에 없는 약 직접 입력</button>
+        <div id="customFields" class="custom-fields" hidden>
+          <label>약 이름 (출력 시 그대로 표시)
+            <input id="customName" type="text" placeholder="예: Cefaclor 250mg">
+          </label>
+          <label>사용 경로
+            <select id="customRoute">
+              <option value="oral">내복 (먹는 약)</option>
+              <option value="eye">점안 (안약)</option>
+              <option value="topical">외용 (바르는 약)</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <div class="step">
+        <h2><span class="num">2</span>복용 방법</h2>
+        <div class="form-grid">
+          <label id="fQty">1회 용량
+            <span class="inline">
+              <input id="qty" type="number" min="0.5" step="0.5" value="1">
+              <select id="unit"></select>
+            </span>
+          </label>
+          <label>1일 횟수
+            <select id="freq"></select>
+          </label>
+          <label id="fTiming">복용 시점
+            <select id="timing"></select>
+          </label>
+          <label>기간
+            <select id="days"></select>
+          </label>
+          <label id="fInterval" hidden>최소 복용 간격
+            <select id="interval"></select>
+          </label>
+          <label id="fMax" hidden>1일 최대 횟수
+            <select id="maxDaily"></select>
+          </label>
+        </div>
+        <p id="previewKo" class="preview-ko"></p>
+      </div>
+
+      <div class="step">
+        <h2><span class="num">3</span>추가 주의사항</h2>
+        <div id="generalList" class="checks"></div>
+      </div>
+
+      <div class="add-row">
+        <button type="button" id="addBtn" class="primary">목록에 추가</button>
+        <button type="button" id="cancelEditBtn" class="ghost" hidden>수정 취소</button>
+      </div>
+
+      <div class="step list-step">
+        <h2>조제 목록 <span id="listCount" class="count">0</span></h2>
+        <ul id="rxList" class="rx-list"></ul>
+        <button type="button" id="clearBtn" class="ghost small">전체 비우기</button>
+      </div>
+    </section>
+
+    <!-- ============ 출력 영역 ============ -->
+    <section class="panel output-panel" aria-label="복약지도 출력">
+      <div class="toolbar">
+        <div class="tabs" role="tablist">
+          <button type="button" role="tab" data-lang="en">English</button>
+          <button type="button" role="tab" data-lang="zh">中文</button>
+          <button type="button" role="tab" data-lang="ja">日本語</button>
+          <button type="button" role="tab" data-lang="all">전체</button>
+        </div>
+        <label class="switch">
+          <input id="showKo" type="checkbox" checked>
+          <span>한국어 병기</span>
+        </label>
+      </div>
+      <div class="actions">
+        <button type="button" id="speakBtn">전체 읽어주기</button>
+        <button type="button" id="copyBtn">텍스트 복사</button>
+        <button type="button" id="printBtn">인쇄</button>
+      </div>
+      <div id="output" class="output" aria-live="polite"></div>
+    </section>
+  </main>
+
+  <footer class="app-footer">
+    본 가이드는 복약지도를 돕는 보조 도구입니다. 제품명은 국내 유통 예시이며, 실제 조제 약품의 허가사항과 처방 내용을 반드시 확인하세요.
+  </footer>
+
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
